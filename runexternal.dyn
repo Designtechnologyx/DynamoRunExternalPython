@@ -1,0 +1,39 @@
+<Workspace Version="1.3.4.6666" X="-121.218676801278" Y="-177.775237836482" zoom="1.10476425630303" ScaleFactor="1" Name="Home" Description="" RunType="Automatic" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <PythonNodeModels.PythonNode guid="6cc164fa-2595-41b2-b946-2e03961aad69" type="PythonNodeModels.PythonNode" nickname="Python Script" x="611.217249856794" y="274.341296847551" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="true" inputcount="3">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <Script>import sys
+#import imp
+sys.path.append(r'C:\\Users\\dbrokaw\\Desktop')
+#the path of the python file less the file name C:\\Users\\dbrokaw\\Desktop\\mystuff.py
+import mystuff #file name less the .py extension\r\nreload(mystuff)
+OUT = mystuff.doit(IN[0], IN[1]) #filename.definition inside file
+#imputs are handled in dynamo hence the above IN0 and IN1, IN2 is just a bool",</Script>
+    </PythonNodeModels.PythonNode>
+    <CoreNodeModels.Input.BoolSelector guid="f0579ba4-fd9d-4d1e-b78d-7c851d2f5291" type="CoreNodeModels.Input.BoolSelector" nickname="Boolean" x="338.451660171465" y="378.675908309784" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.Boolean>True</System.Boolean>
+    </CoreNodeModels.Input.BoolSelector>
+    <CoreNodeModels.Input.DoubleSlider guid="f6336783-0388-4f43-a061-408e54168066" type="CoreNodeModels.Input.DoubleSlider" nickname="&quot;A&quot; Enter Total Square Footage of Building" x="176.671595657228" y="226.054584583545" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.Double>1</System.Double>
+      <Range min="0" max="100" step="0.1" />
+    </CoreNodeModels.Input.DoubleSlider>
+    <CoreNodeModels.Input.DoubleSlider guid="3166c06c-2ce7-4f61-a204-763038aee965" type="CoreNodeModels.Input.DoubleSlider" nickname="&quot;NOF&quot; Enter Number of Floors" x="176.56537961622" y="299.278609224574" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.Double>1</System.Double>
+      <Range min="0" max="100" step="0.1" />
+    </CoreNodeModels.Input.DoubleSlider>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="f0579ba4-fd9d-4d1e-b78d-7c851d2f5291" start_index="0" end="6cc164fa-2595-41b2-b946-2e03961aad69" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="f6336783-0388-4f43-a061-408e54168066" start_index="0" end="6cc164fa-2595-41b2-b946-2e03961aad69" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3166c06c-2ce7-4f61-a204-763038aee965" start_index="0" end="6cc164fa-2595-41b2-b946-2e03961aad69" end_index="1" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>
